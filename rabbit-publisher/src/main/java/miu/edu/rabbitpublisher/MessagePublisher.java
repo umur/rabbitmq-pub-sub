@@ -21,6 +21,7 @@ public class MessagePublisher {
     @Scheduled(fixedRate = 2000)
     public void sendMessage(){
         amqpTemplate.convertAndSend(exchange, "","umur " + id);
+        System.out.println("sent");
         id++;
     }
 }
